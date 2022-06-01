@@ -31,5 +31,15 @@ class Transaction extends Model
         'created_at',
         'updated_at',
         'deleted_at',
+
     ];
+
+
+
+    //one to many
+    public function appointment()
+    {
+        // 3 parameter (path model, field foreign keys, field primary key from table hasmany/onemany)
+        return $this->belongsTo('App\Models\MasterData\Appointment', 'appointment_id', 'id');
+    }
 }

@@ -27,4 +27,11 @@ class RoleUser extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    //one to many
+    public function user()
+    {
+        // 3 parameter (path model, field foreign keys, field primary key from table hasmany/onemany)
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
 }

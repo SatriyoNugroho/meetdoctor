@@ -31,4 +31,20 @@ class DetailUser extends Model
         'updated_at',
         'deleted_at',
     ];
+
+
+    //one to many
+    public function type_user()
+    {
+        // 3 parameter (path model, field foreign keys, field primary key from table hasmany/onemany)
+        return $this->belongsTo('App\Models\MasterData\TypeUser', 'type_user_id', 'id');
+    }
+
+
+    //one to many
+    public function user()
+    {
+        // 3 parameter (path model, field foreign keys, field primary key from table hasmany/onemany)
+        return $this->belongsTo('App\Models\USer', 'user_id', 'id');
+    }
 }
